@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Volcanic Eruption Quiz - Question 1</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+  .question { background: #fff; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.2);}
+  h2 { margin-top: 0; }
+  a { display: block; margin: 8px 0; padding: 10px; background: #e6e6e6; color: #000; text-decoration: none; border-radius: 4px; }
+  a:hover { background: #ccc; }
+  .feedback { margin-top: 15px; padding: 12px; border-radius: 4px; display: none; }
+  .correct { background: #d4edda; color: #155724; }
+  .wrong { background: #f8d7da; color: #721c24; }
+</style>
+</head>
+<body>
+
+<div class="question">
+  <h2>Before a volcanic eruption, which preparation is BEST?</h2>
+  <a href="#" onclick="wrong('Waiting until eruption risks shortages and rushed decisions.', 'Prepare an emergency supply kit and place it in an accessible area', 'A ready kit helps you act fast in an emergency.'); return false;">Wait for the eruption before buying supplies</a>
+  <a href="#" onclick="wrong('Ignoring updates may cause you to miss evacuation warnings.', 'Prepare an emergency supply kit and place it in an accessible area', 'A ready kit helps you act fast in an emergency.'); return false;">Ignore radio announcements about ash fall</a>
+  <a href="#" onclick="correct('Having an emergency kit in an accessible spot lets you evacuate or shelter quickly.'); return false;">Prepare an emergency supply kit and place it in an accessible area</a>
+  <a href="#" onclick="wrong('Unnecessary outdoor exposure increases danger from ash and debris.', 'Prepare an emergency supply kit and place it in an accessible area', 'A ready kit helps you act fast in an emergency.'); return false;">Play outside to see the volcano clearly</a>
+
+  <div id="feedback" class="feedback"></div>
+</div>
+
+<script>
+function correct(reason) {
+  let fb = document.getElementById('feedback');
+  fb.className = 'feedback correct';
+  fb.innerHTML = '✅ Correct! ' + reason;
+  fb.style.display = 'block';
+}
+
+function wrong(reasonWrong, correctAnswer, reasonRight) {
+  let fb = document.getElementById('feedback');
+  fb.className = 'feedback wrong';
+  fb.innerHTML = '❌ Wrong. ' + reasonWrong + ' The correct answer is: "' + correctAnswer + '". ' + reasonRight;
+  fb.style.display = 'block';
+}
+</script>
+
+</body>
+</html> 
